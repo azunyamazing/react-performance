@@ -1,30 +1,29 @@
-## React Performance
+### React Performance
 
-### Debugger
+:innocent: 关于 React 组件层面的性能优化, 本质上就是尽可能减少组件的重复渲染
+
+### Debug By Yourself
 
 ```bash
 npm i
 npm start
 ```
 
-### Dir
+### React Performance
 
-```txt
-- src
-  - demo1.tsx  // a bad example
-  - demo2-memo.tsx
-  - demo2-useMemo.tsx
-  - demo3.tsx // a example
-  - demo4.tsx
-```
+:doughnut: [What You Did](./src/what-you-did/readme.md)
+
+:custard: [How About Slot](./src/how-about-slot/readme.md)
+
+:bread: [About Memo Api](./src/about-memo-api/readme.md)
 
 ### Summary
 
-```txt
-* React 性能优化的本质是将*变与不变部分*进行分离来减少不必要组件的重新渲染
-* 所谓变的部分即以下会进行更新
-  * state
-  * props
-  * context
-* 当需要维持组件不进行非必要的 rerender 时, 应该保持组件的 state / props / context 不变, 尤其是 props 应该维持同一个引用或者改为浅比较!
-```
+:speedboat: React 组件层面性能优化本质上就是将更新频繁的组件和不变的组件进行分离, 将渲染开销控制在局部上, 而不影响更新频率较低的组件
+
+:sailboat: React Function Component 会发生更新的部分, 也就是会触发 rerender 的原因
+  1. state
+  2. props
+  3. context
+
+:boat: 安抚好 React FC 三剑客的情绪, 请务必不要让他们如此善变, 不要将情绪传染给其他兄弟组件！

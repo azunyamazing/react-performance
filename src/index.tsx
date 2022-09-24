@@ -1,5 +1,3 @@
-// export * from "./demo1";
-// export * from "./demo2-memo";
-// export * from "./demo2-useMemo";
-// export * from "./demo3";
-export * from "./demo4";
+export * from "./what-you-did";
+export * from "./how-about-slot";
+export * from "./about-memo-api";
