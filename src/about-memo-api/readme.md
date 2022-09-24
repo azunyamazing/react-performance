@@ -33,7 +33,7 @@ const ExpensiveComponent = memo(() => {
 // "App render!"
 ```
 
-:sailboat: 使用 `memo` 将 `ExpensiveComponent` 包裹住后, `memo` 会在组件重新渲染时, 对 props 进行[^浅比较]而不是进行全等比较, 因此 `ExpensiveComponent` 组件接收到的仍是前一次的 props 引用, 不会进行 rerender
+:sailboat: 使用 `memo` 将 `ExpensiveComponent` 包裹住后, `memo` 会在组件重新渲染时, 对 props 进行浅比较[^浅比较]而不是进行全等比较, 因此 `ExpensiveComponent` 组件接收到的仍是前一次的 props 引用, 不会进行 rerender
 
 
 [^浅比较]: 不会使用 === 进行比较, 而是比较属性, 因此开销也相对全等比较来说更大
@@ -68,3 +68,5 @@ const App = () => {
 
 :sailboat: 这里其实是 `useMemo` 比较 hack 的用法, 一般 `useMemo` 用来对比 Vue 的 `computed`, 也就是来缓存一些计算开销叫昂贵的值, 这里用来保存组件, 用法就和 `memo` 类似, 因此依赖数组为空, 因此 `ExpensiveComponent` 的返回值永远是同一个, 也不会进行 rerender
 
+:airplane: 其他方式优化
+:christmas_tree: [slot 优化](../how-about-slot/readme.md)

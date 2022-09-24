@@ -42,3 +42,7 @@ function ExpensiveComponent() {
 :rocket: 跟之前用例对比, 这次我们是将 `input` 和 `button` 相关代码和状态单独封装到组件 `Count` 中, 就是这样一个操作, 每次都只会更新 `Count` 组件！
 * `App` 组件因为自身没有状态更新, 所以不会进行 rerender, 既然如此, `ExpensiveComponent` 接收的 props 也不会变, 也不会进行 rerender
 * `Count` 中每次点击按钮更新状态后, 自身进行 rerender, 不会影响到父组件和兄弟组件
+
+:airplane: 其他方式优化
+:ghost: [memo 优化](../about-memo-api/readme.md)
+
